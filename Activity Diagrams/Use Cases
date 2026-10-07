@@ -1,0 +1,22 @@
+Switch On Provider Terminal - Done
+    Verify Provider - Done
+Bill for Service
+    Validate Member
+    Look Up Service Code
+    Write Record to Disk
+Request Provider Directory
+Main Accounting Procedure
+    Generate Member Reports
+    Generate Provider Reports
+    Generate Summary Report
+    Write EFT Data to Disk
+Request Individual Report
+    Verify Manager
+    Generate Member Reports
+    Generate Provider Reports
+    Generate Summary Report
+Edit Member Data
+    Verify Operator
+Edit Provider Data
+    Verify Operator
+Update Membership Records
