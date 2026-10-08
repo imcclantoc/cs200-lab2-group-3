@@ -1,8 +1,8 @@
 Switch On Provider Terminal - Done
     Verify Provider - Done
 Bill for Service
-    Validate Member
-    Look Up Service Code
+    Validate Member - Done
+    Look Up Service Code - Done
     Write Record to Disk
 Request Provider Directory - Done
 Main Accounting Procedure
@@ -18,5 +18,5 @@ Request Individual Report
 Edit Member Data
     Verify Operator - Done
 Edit Provider Data
-    Verify Provider
+    Verify Provider - Done
 Update Membership Records
