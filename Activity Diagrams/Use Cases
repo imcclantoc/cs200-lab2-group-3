@@ -6,15 +6,15 @@ Bill for Service
     Write Record to Disk - Done
 Request Provider Directory - Done
 Main Accounting Procedure
-    Generate Member Reports
-    Generate Provider Reports
-    Generate Summary Report
+    Generate Member Reports - Done
+    Generate Provider Reports - Done
+    Generate Summary Report - Done
     Write EFT Data to Disk - Done
-Request Individual Report
+Request Individual Report - Done
     Verify Manager
-    Generate Member Reports
-    Generate Provider Reports
-    Generate Summary Report
+    Generate Member Reports - Done
+    Generate Provider Reports - Done
+    Generate Summary Report - Done
 Edit Member Data
     Verify Operator - Done
 Edit Provider Data
