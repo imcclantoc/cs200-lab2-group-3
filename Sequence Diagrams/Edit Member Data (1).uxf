@@ -1,0 +1,41 @@
+<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><help_text>Automated Process</help_text><element><id>UMLActor</id><coordinates><x>0</x><y>63</y><w>84</w><h>77</h></coordinates><panel_attributes>ChocAn Operator</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>182</x><y>98</y><w>70</w><h>35</h></coordinates><panel_attributes>_Operator_
+_Terminal_
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>518</x><y>98</y><w>70</w><h>35</h></coordinates><panel_attributes>_Member_
+_Controller_</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>553</x><y>126</y><w>21</w><h>511</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;710</additional_attributes></element><element><id>Relation</id><coordinates><x>35</x><y>126</y><w>21</w><h>511</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;710</additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>126</y><w>21</w><h>504</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;700</additional_attributes></element><element><id>UMLFrame</id><coordinates><x>7</x><y>252</y><w>588</w><h>322</h></coordinates><panel_attributes>Alt
+--
+
+
+
+
+
+
+
+
+-.
+
+
+
+
+
+
+
+
+
+
+-.</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>35</x><y>161</y><w>14</w><h>371</h></coordinates><panel_attributes>
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>35</x><y>217</y><w>196</w><h>28</h></coordinates><panel_attributes>lt=&lt;-
+2: displayMenu()</panel_attributes><additional_attributes>260;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>35</x><y>161</y><w>196</w><h>28</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+1: loginProvider(providerId: String)</panel_attributes><additional_attributes>260;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>35</x><y>182</y><w>196</w><h>28</h></coordinates><panel_attributes>lt=&lt;.
+1.1: loggedIn: boolean</panel_attributes><additional_attributes>10;20;260;20</additional_attributes></element><element><id>Relation</id><coordinates><x>35</x><y>385</y><w>196</w><h>28</h></coordinates><panel_attributes>lt=&lt;-
+3: promptUpdateMember()</panel_attributes><additional_attributes>260;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>35</x><y>280</y><w>196</w><h>28</h></coordinates><panel_attributes>lt=&lt;-
+3: promptCreateMember()</panel_attributes><additional_attributes>260;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>35</x><y>497</y><w>196</w><h>28</h></coordinates><panel_attributes>lt=&lt;-
+3: promptDeleteMember()</panel_attributes><additional_attributes>260;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>301</y><w>364</w><h>28</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+4: addMember(name: String, street: String, city: String, state: String, zip: String)</panel_attributes><additional_attributes>500;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>406</y><w>364</w><h>35</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+4: updateMember(memberId: String, name: String, street: String,
+ city: String, state: String, zip: String)</panel_attributes><additional_attributes>500;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>518</y><w>364</w><h>28</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-
+4: deleteMember(memberId: String)</panel_attributes><additional_attributes>500;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>322</y><w>364</w><h>28</h></coordinates><panel_attributes>lt=&lt;.
+4.1: return: String</panel_attributes><additional_attributes>10;20;500;20</additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>434</y><w>364</w><h>28</h></coordinates><panel_attributes>lt=&lt;.
+4.1: return: boolean</panel_attributes><additional_attributes>10;20;500;20</additional_attributes></element><element><id>Relation</id><coordinates><x>210</x><y>539</y><w>364</w><h>28</h></coordinates><panel_attributes>lt=&lt;.
+4.1: return: boolean</panel_attributes><additional_attributes>10;20;500;20</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>553</x><y>301</y><w>14</w><h>273</h></coordinates><panel_attributes>
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>210</x><y>280</y><w>14</w><h>287</h></coordinates><panel_attributes>
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>56</x><y>259</y><w>70</w><h>14</h></coordinates><panel_attributes>Create Member</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>56</x><y>364</y><w>70</w><h>14</h></coordinates><panel_attributes>Update Member</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>56</x><y>476</y><w>70</w><h>14</h></coordinates><panel_attributes>Delete Member</panel_attributes><additional_attributes></additional_attributes></element></diagram>
