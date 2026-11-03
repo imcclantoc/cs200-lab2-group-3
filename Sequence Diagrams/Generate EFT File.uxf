@@ -1,0 +1,35 @@
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><help_text>Automated Process</help_text><element><id>UMLActor</id><coordinates><x>234</x><y>72</y><w>72</w><h>99</h></coordinates><panel_attributes>Manager</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>369</x><y>117</y><w>90</w><h>45</h></coordinates><panel_attributes>_Timer_
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>603</x><y>117</y><w>90</w><h>45</h></coordinates><panel_attributes>_Report_
+_Controller_</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>648</x><y>153</y><w>27</w><h>648</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;700</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>828</x><y>117</y><w>90</w><h>45</h></coordinates><panel_attributes>_Service_
+_Controller_</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>864</x><y>153</y><w>27</w><h>639</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;690</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>261</x><y>198</y><w>18</w><h>27</h></coordinates><panel_attributes>
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>270</x><y>207</y><w>405</w><h>36</h></coordinates><panel_attributes>lt=&lt;-
+1: runMainAccountingProcedure()</panel_attributes><additional_attributes>430;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>414</x><y>288</y><w>252</w><h>36</h></coordinates><panel_attributes>lt=&lt;-
+2: runMainAccountingProcedure()</panel_attributes><additional_attributes>260;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>261</x><y>108</y><w>27</w><h>702</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;760</additional_attributes></element><element><id>Relation</id><coordinates><x>405</x><y>153</y><w>36</w><h>657</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>20;10;10;710</additional_attributes></element><element><id>UMLFrame</id><coordinates><x>225</x><y>162</y><w>432</w><h>171</h></coordinates><panel_attributes>Alt
+--
+[Manager Requests Report]
+
+
+
+-.
+[Timer Requests Report]</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>414</x><y>252</y><w>252</w><h>45</h></coordinates><panel_attributes>lt=&lt;-
+1: triggerWeeklyAccounting()</panel_attributes><additional_attributes>10;30;100;30;100;10;10;10</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>864</x><y>288</y><w>18</w><h>90</h></coordinates><panel_attributes>
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>648</x><y>324</y><w>234</w><h>36</h></coordinates><panel_attributes>lt=&lt;-
+3: getAllWeeklyRecords()</panel_attributes><additional_attributes>240;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>648</x><y>351</y><w>234</w><h>45</h></coordinates><panel_attributes>lt=&lt;.
+3.1: providerList: Map&lt;String, Provider&gt;
+</panel_attributes><additional_attributes>10;20;240;20</additional_attributes></element><element><id>Relation</id><coordinates><x>648</x><y>387</y><w>324</w><h>45</h></coordinates><panel_attributes>lt=&lt;-
+4: getProvider(providerId: String): Provider
+</panel_attributes><additional_attributes>10;30;100;30;100;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>648</x><y>432</y><w>162</w><h>54</h></coordinates><panel_attributes>lt=&lt;.
+4.1: Provider
+</panel_attributes><additional_attributes>10;40;90;40;90;10;10;10</additional_attributes></element><element><id>UMLFrame</id><coordinates><x>504</x><y>486</y><w>333</w><h>180</h></coordinates><panel_attributes>Loop</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>504</x><y>504</y><w>90</w><h>63</h></coordinates><panel_attributes>For Each Provider Report
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>648</x><y>504</y><w>162</w><h>45</h></coordinates><panel_attributes>lt=&lt;-
+ generateEFTFile()</panel_attributes><additional_attributes>10;30;60;30;60;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>648</x><y>540</y><w>180</w><h>54</h></coordinates><panel_attributes>lt=&lt;.
+5.1: String: EFTReport</panel_attributes><additional_attributes>10;40;60;40;60;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>648</x><y>585</y><w>396</w><h>45</h></coordinates><panel_attributes>lt=&lt;-
+5.2: writeReportToFile(filename: String, content: String): boolean
+</panel_attributes><additional_attributes>10;30;60;30;60;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>261</x><y>675</y><w>405</w><h>45</h></coordinates><panel_attributes>lt=&lt;.
+7: Boolean: isSaved
+</panel_attributes><additional_attributes>10;20;430;20</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>261</x><y>225</y><w>18</w><h>513</h></coordinates><panel_attributes>
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>648</x><y>216</y><w>18</w><h>522</h></coordinates><panel_attributes>
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>1035</x><y>117</y><w>90</w><h>45</h></coordinates><panel_attributes>_Disk_
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>657</x><y>666</y><w>432</w><h>36</h></coordinates><panel_attributes>lt=&lt;-
+6: Save File to Disk</panel_attributes><additional_attributes>460;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>1071</x><y>153</y><w>27</w><h>657</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;710</additional_attributes></element><element><id>UMLGeneric</id><coordinates><x>1071</x><y>675</y><w>18</w><h>18</h></coordinates><panel_attributes>
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element></diagram>
