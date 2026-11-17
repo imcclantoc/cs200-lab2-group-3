@@ -1,3 +1,4 @@
+// This identifies all the variables associated with the Member class
 public class Member {
     private final String id;
     private String name;
@@ -7,7 +8,7 @@ public class Member {
     private String zipCode;
     private String status;
 
-
+    // Member sets all variables with input data to this (itself)
     public Member(String id, String name, String streetAddress, String city,
             String state, String zipCode, String status) {
         this.id = id;
@@ -19,6 +20,7 @@ public class Member {
         this.status = status;
     }
 
+    // All of these following methods return the string associated with the variable
 
     public String getId() {
         return id;
@@ -54,7 +56,8 @@ public class Member {
         return status;
     }
 
-
+    // The following methods are used to set individual variables
+    
     public void setName(String name) {
         this.name = name;
     }
@@ -84,7 +87,7 @@ public class Member {
         this.status = status;
     }
 
-
+    // Determines member status based on whether the member has paid
     public boolean isSuspended() {
         return "Suspended".equals(status);
     }
