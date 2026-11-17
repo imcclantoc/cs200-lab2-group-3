@@ -1,0 +1,253 @@
+<diagram program="umletino" version="15.1"><zoom_level>5</zoom_level><element><id>UMLClass</id><coordinates><x>875</x><y>185</y><w>155</w><h>45</h></coordinates><panel_attributes>Acme Accounting &lt;&lt;boundary&gt;&gt;
+--
+- memberController: MemberController
+--
++ processNightlyUpdate(updateFilePath: String): void
+- parseAcmeFile(updateFilePath: String): List&lt;String&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>505</x><y>45</y><w>140</w><h>90</h></coordinates><panel_attributes>Operator Terminal &lt;&lt;boundary&gt;&gt;
+--
+- memberController: MemberController
+- providerController: ProviderController
+--
++ promptCreateMember(): void
++ promptUpdateMember(): void
++ promptDeleteMember(): void
++ promptCreateProvider(): void
++ promptUpdateProvider(): void
++ promptDeleteProvider(): void
++ displayMenu(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>230</x><y>105</y><w>195</w><h>125</h></coordinates><panel_attributes>Provider Terminal &lt;&lt;boundary&gt;&gt;
+--
+- currentProviderId: String
+- memberController: MemberController
+- providerController: ProviderController
+- serviceController: ServiceController
+- reportController: ReportController
+--
++ loginProvider(providerId: String): boolean
++ swipeMemberCard(memberId: String): void
++ enterServiceDetails(serviceDate: String, memberId: String, 
+serviceCode: String, comments: String): void
++ requestProviderDirectory(): void
++ displayVerification(serviceName: String, fee: double): void
++ displayStatus(message: String): void
++ displayMenu(): void
++ unlock(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>680</x><y>55</y><w>140</w><h>80</h></coordinates><panel_attributes>Manager Terminal &lt;&lt;boundary&gt;&gt;
+--
+- reportController: ReportController
+--
++ requestMemberReport(memberId: String): void
++ requestProviderReport(providerId: String): void
++ requestSummaryReport(): void
++ requestProviderDirectoryReport(): void
++ displayReport(reportContent: String): void
++ displayMenu(): void
++ inputResponse(response: Boolean): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>885</x><y>425</y><w>110</w><h>45</h></coordinates><panel_attributes>Timer
+--
+- reportController: ReportController
+--
++ scheduleMidnightRun(): void
++ triggerWeeklyAccounting(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>260</y><w>195</w><h>80</h></coordinates><panel_attributes>ChocAn Data Center
+--
+- memberController: MemberController
+- providerController: ProviderController
+- serviceController: ServiceController
+- reportController: ReportController
+--
++ getMemberController(): MemberController
++ getProviderController(): ProviderController
++ getServiceController(): ServiceController
++ getReportController(): ReportController
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>300</y><w>195</w><h>85</h></coordinates><panel_attributes>Member Controller &lt;&lt;control&gt;&gt;
+--
+- memberList: List&lt;Member&gt;
+--
++ addMember(name: String, street: String, city: String, 
+state: String, zip: String): String
++ updateMember(memberId: String, name: String, 
+street: String, city: String, state: String, zip: String): boolean
++ deleteMember(memberId: String): boolean
++ getMember(memberId: String): Member
++ validateMember(memberId: String): String
++ updateMemberStatus(memberId: String, status: String): boolean
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>120</x><y>380</y><w>180</w><h>90</h></coordinates><panel_attributes>Provider Controller &lt;&lt;control&gt;&gt;
+--
+- providerList: List&lt;Provider&gt;
+--
++ addProvider(name: String, street: String, city: String, 
+state: String, zip: String): String
++ updateProvider(providerId: String, name: String, 
+street: String, city: String, state: String, zip: String): boolean
++ deleteProvider(providerId: String): boolean
++ getProvider(providerId: String): Provider
++ validateProvider(providerId: String): boolean
++ getAllProviders(): List&lt;Provider&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>330</x><y>330</y><w>215</w><h>90</h></coordinates><panel_attributes>Service Controller &lt;&lt;control&gt;&gt;
+--
+- providerDirectory: ProviderDirectory
+- appointments: List&lt;Appointment&gt;
+--
++ verifyServiceCode(serviceCode: String): Service
++ recordService(serviceDate: String, providerId: String, 
+memberId: String, serviceCode: String, comments: String): Appointment
++ getRecordsByMember(memberId: String): List&lt;Appointment&gt;
++ getRecordsByProvider(providerId: String): List&lt;Appointment&gt;
++ getAllWeeklyRecords(): List&lt;Appointment&gt;
+- writeRecordToDisk(record: Appointment): boolean
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>810</x><y>245</y><w>195</w><h>95</h></coordinates><panel_attributes>Report Controller &lt;&lt;control&gt;&gt;
+--
+- memberController: MemberController
+- providerController: ProviderController
+- serviceController: ServiceController
+--
++ runMainAccountingProcedure(): void
++ generateMemberReport(memberId: String): String
++ generateProviderReport(providerId: String): String
++ generateSummaryReport(): String
++ generateEFTFile(): String
++ generateProviderDirectoryFile(): String
+- writeReportToFile(filename: String, content: String): boolean
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>215</x><y>555</y><w>140</w><h>150</h></coordinates><panel_attributes>/Person/
+--
+- id: String (9 digits)
+- name: String
+- streetAddress: String
+- city: String
+- state: String
+- zipCode: String
+--
++ getId(): String
++ getName(): String
++ getStreetAddress(): String
++ getCity(): String
++ getState(): String
++ getZipCode(): String
++ setName(name: String): void
++ setStreetAddress(streetAddress: String): void
++ setCity(city: String): void
++ setState(state: String): void
++ setZipCode(zipCode: String): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>215</x><y>485</y><w>140</w><h>50</h></coordinates><panel_attributes>Member &lt;&lt;entity&gt;&gt;
+--
+- status: String (Values: "Active", "Suspended")
+--
++ getStatus(): String
++ setStatus(status: String): void
++ isSuspended(): boolean
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>215</x><y>725</y><w>140</w><h>70</h></coordinates><panel_attributes>Provider &lt;&lt;entity&gt;&gt;
+--
+- totalConsultations: int
+- weeklyFeeTotal: double
+--
++ getTotalConsultations(): int
++ getWeeklyFeeTotal(): double
++ updateWeeklyTotals(fee: double): void
++ resetWeeklyTotals(): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>425</x><y>495</y><w>165</w><h>130</h></coordinates><panel_attributes>Appointment &lt;&lt;entity&gt;&gt;
+--
+- currentDateTime: String (Format: MM-DD-YYYY HH:MM:SS)
+- dateOfService: String (Format: MM-DD-YYYY)
+- providerId: String
+- memberId: String
+- serviceCode: String
+- comments: String
+- fee: double
+--
++ getCurrentDateTime(): String
++ getDateOfService(): String
++ getProviderId(): String
++ getMemberId(): String
++ getServiceCode(): String
++ getComments(): String
++ getFee(): double
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>635</x><y>465</y><w>145</w><h>60</h></coordinates><panel_attributes>Provider Directory &lt;&lt;entity&gt;&gt;
+--
+- services: List&lt;Service&gt;
+--
++ addService(service: Service): void
++ removeService(serviceCode: String): boolean
++ getServiceByCode(serviceCode: String): Service
++ getServicesAlphabetical(): List&lt;Service&gt;
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>650</x><y>570</y><w>135</w><h>85</h></coordinates><panel_attributes>Service &lt;&lt;entity&gt;&gt;
+--
+- serviceCode: String (6 digits)
+- serviceName: String (max 20 characters)
+- fee: double (up to $999.99)
+--
++ getServiceCode(): String
++ getServiceName(): String
++ getFee(): double
++ setServiceName(serviceName: String): void
++ setFee(fee: double): void
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>530</y><w>15</w><h>35</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>275</x><y>700</y><w>15</w><h>35</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>705</x><y>520</y><w>25</w><h>60</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+m1=1
+m2=1..*
+</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>500</y><w>85</w><h>25</h></coordinates><panel_attributes>lt=-&gt;
+m1=0..*
+m2=1
+</panel_attributes><additional_attributes>150;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>350</x><y>620</y><w>105</w><h>135</h></coordinates><panel_attributes>lt=-&gt;
+m1=0..*
+m2=1
+</panel_attributes><additional_attributes>170;10;170;240;10;240</additional_attributes></element><element><id>Relation</id><coordinates><x>585</x><y>595</y><w>75</w><h>25</h></coordinates><panel_attributes>lt=-&gt;
+m1=0..*
+m2=1
+</panel_attributes><additional_attributes>10;20;130;20</additional_attributes></element><element><id>Relation</id><coordinates><x>525</x><y>415</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
+m1=1
+m2=0..*
+stores</panel_attributes><additional_attributes>10;10;10;160</additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>405</y><w>190</w><h>70</h></coordinates><panel_attributes>lt=-&gt;
+m1=1
+m2=1
+queries</panel_attributes><additional_attributes>10;20;350;20;350;120</additional_attributes></element><element><id>Relation</id><coordinates><x>320</x><y>380</y><w>260</w><h>115</h></coordinates><panel_attributes>lt=-&gt;
+m1=1
+m2=0..*
+manages</panel_attributes><additional_attributes>490;10;490;150;10;150;10;210</additional_attributes></element><element><id>Relation</id><coordinates><x>170</x><y>465</y><w>55</w><h>310</h></coordinates><panel_attributes>lt=-&gt;
+m1=1
+m2=0..*
+manages</panel_attributes><additional_attributes>10;10;10;590;90;590</additional_attributes></element><element><id>Relation</id><coordinates><x>660</x><y>200</y><w>225</w><h>110</h></coordinates><panel_attributes>lt=-&gt;
+m1=1
+m2=1
+updatesStatus</panel_attributes><additional_attributes>430;20;10;20;10;200</additional_attributes></element><element><id>Relation</id><coordinates><x>585</x><y>130</y><w>65</w><h>180</h></coordinates><panel_attributes>lt=-&gt;
+m1=0..*
+m2=1
+managesMembers</panel_attributes><additional_attributes>10;10;10;340</additional_attributes></element><element><id>Relation</id><coordinates><x>290</x><y>130</y><w>270</w><h>260</h></coordinates><panel_attributes>lt=-&gt;
+m1=0..*
+m2=1
+managesProviders</panel_attributes><additional_attributes>500;10;500;310;10;310;10;500</additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>210</y><w>165</w><h>100</h></coordinates><panel_attributes>lt=-&gt;
+m1=0..*
+m2=1
+validatesMember</panel_attributes><additional_attributes>10;20;300;20;300;180</additional_attributes></element><element><id>Relation</id><coordinates><x>230</x><y>225</y><w>25</w><h>165</h></coordinates><panel_attributes>lt=-&gt;
+m1=0..*
+m2=1
+</panel_attributes><additional_attributes>10;10;10;310</additional_attributes></element><element><id>Relation</id><coordinates><x>330</x><y>225</y><w>25</w><h>115</h></coordinates><panel_attributes>lt=-&gt;
+m1=0..*
+m2=1
+</panel_attributes><additional_attributes>10;10;10;210</additional_attributes></element><element><id>Relation</id><coordinates><x>420</x><y>145</y><w>400</w><h>120</h></coordinates><panel_attributes>lt=-&gt;
+m1=0..*
+m2=1
+requestsReports</panel_attributes><additional_attributes>10;20;670;20;670;210;780;210</additional_attributes></element><element><id>Relation</id><coordinates><x>810</x><y>130</y><w>60</w><h>125</h></coordinates><panel_attributes>lt=-&gt;
+m1=0..*
+m2=1
+requestsReports</panel_attributes><additional_attributes>10;10;10;230</additional_attributes></element><element><id>Relation</id><coordinates><x>935</x><y>335</y><w>35</w><h>100</h></coordinates><panel_attributes>lt=-&gt;
+m1=1
+m2=1
+triggers</panel_attributes><additional_attributes>10;180;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>155</x><y>335</y><w>20</w><h>55</h></coordinates><panel_attributes>lt=-&gt;
+m1=1
+m2=1</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>330</y><w>150</w><h>20</h></coordinates><panel_attributes>lt=-&gt;
+m1=1
+m2=1</panel_attributes><additional_attributes>10;10;280;10</additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>300</y><w>380</w><h>20</h></coordinates><panel_attributes>lt=-&gt;
+m1=1
+m2=1</panel_attributes><additional_attributes>10;10;740;10</additional_attributes></element><element><id>Relation</id><coordinates><x>190</x><y>265</y><w>630</w><h>20</h></coordinates><panel_attributes>lt=-&gt;
+m1=1
+m2=1</panel_attributes><additional_attributes>10;10;1240;10</additional_attributes></element><element><id>Relation</id><coordinates><x>750</x><y>320</y><w>70</w><h>25</h></coordinates><panel_attributes>lt=-&gt;
+m1=1
+m2=1
+fetchesData</panel_attributes><additional_attributes>120;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>335</y><w>300</w><h>80</h></coordinates><panel_attributes>lt=-&gt;
+m1=1
+m2=1
+fetchesAppointments
+</panel_attributes><additional_attributes>570;10;570;130;10;130</additional_attributes></element><element><id>Relation</id><coordinates><x>295</x><y>335</y><w>575</w><h>120</h></coordinates><panel_attributes>lt=-&gt;
+m1=1
+m2=1
+fetchesData</panel_attributes><additional_attributes>1120;10;1120;210;10;210</additional_attributes></element></diagram>
