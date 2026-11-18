@@ -1,0 +1,15 @@
+In order to run the project successfully, the following must be done in the terminal 
+
+Navigate to the folder
+cd "All Code"
+javac *.java
+java userLogin
+
+All of the necessary login information is as follows
+All usernames for ease of use are 123456789
+The password is testing
+
+Service code examples are 100000, 10001, ...
+Member IDs are 000000001, 000000002, ...
+
+All other information is saved into the data folder in each corresponding tsv file (ie member data, provider data, etc)
